@@ -25,9 +25,11 @@ import com.zcolin.frame.imageloader.ImageLoaderUtils;
 import com.zcolin.frame.permission.PermissionHelper;
 import com.zcolin.frame.permission.PermissionsResultAction;
 import com.zcolin.frame.util.ActivityUtil;
+import com.zcolin.frame.util.AppUtil;
 import com.zcolin.frame.util.SystemIntentUtil;
 import com.zcolin.frame.util.ToastUtil;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -51,6 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         listButton.add(addButton("权限处理和回传数据演示"));
         listButton.add(addButton("拍照和裁剪演示"));
         listButton.add(addButton("图片选取和裁剪演示"));
+        listButton.add(addButton("APK安裝测试"));
 
         for (Button btn : listButton) {
             btn.setOnClickListener(this);
@@ -122,6 +125,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                 }
             });
+        } else if (v == listButton.get(5)) {
+            AppUtil.installBySys(MainActivity.this, new File(FramePathConst.getInstance().getPathSdcard() + "/_release_MultiPlanning_2.0_build_294.apk"));
         }
     }
 }

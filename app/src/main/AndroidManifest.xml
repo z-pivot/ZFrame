@@ -1,6 +1,8 @@
 <manifest
     package="com.zcolin.frame.demo"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 8.0及以上安装权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- 操作摄像头 -->
